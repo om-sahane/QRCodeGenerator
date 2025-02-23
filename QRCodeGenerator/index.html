@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div id="form">
+        <form action="">
+            <div class="d1">
+            <p>QR Code Generator</p>
+            </div>
+
+           <div class="d2">
+             <input type="text"  id="qrUrl">
+            </div>
+
+            <div id="imgBox" class="d4">
+                <img src="" alt="" id="qrImg">
+            </div>
+            <div class="d3">
+                <button onclick="qrCode">Generate QR</button>
+
+            </div>
+        </form>
+    </div>
+
+<script>
+let imgBox=document.getElementById("imgBox");
+let qrImg=document.getElementById("qrImg");
+let qrUrl=document.getElementById("qrUrl");
+
+
+    
+
+function qrCode(){  
+qrImg.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+qrUrl.value;
+console.log(qrImg.src);
+imgBox.classList.add("show-img");
+
+console.log(qrImg);
+console.log(qrUrl);
+console.log(imgBox);
+}
+
+
+document.querySelector("button").addEventListener("click", function(event){
+    event.preventDefault();  // Prevents form submission
+    qrCode();  // Calls the qrCode function
+});
+
+
+
+        const cursor=document.querySelector(".cursor");
+        var timeout;
+    document.addEventListener("mousemove",(e)=>{
+    let x=e.pageX;
+    let y=e.pageY;
+    cursor.style.top=y+"px";
+    cursor.style.left=x+"px";
+    cursor.style.display="block";
+    
+    function mousest(){
+    cursor.style.display="none";
+
+    }
+    clearTimeout(timeout);
+    timeout=setTimeout(mousest,1000);
+
+
+    });
+    document.addEventListener("mouseout",()=>{
+    
+    cursor.style.display="none";
+
+    });
+
+
+    </script>
+
+    
+</body>
+</html>

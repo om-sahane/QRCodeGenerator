@@ -1,0 +1,139 @@
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+.comic-neue-light {
+    font-family: "Comic Neue", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+
+body{
+    height: 100vh;
+    background-color: #000115;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    color: antiquewhite;
+  
+}
+p:hover{
+    text-shadow: 0px 1px 20px whitesmoke;
+}
+
+#form{
+    border: 2px solid whitesmoke;
+    height: 55vh;
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: scale 2s alternate infinite;
+   
+}
+img,button{
+    animation: scale 2s alternate infinite;
+
+}
+
+button{
+    border-radius: 3px 3px;
+    border: none;
+    width: 10vw;
+    height: 3vh;
+
+}
+
+@keyframes scale {
+    0%{
+    box-shadow:0px 1px 5px whitesmoke;
+    }
+    100%{
+    box-shadow:0px 1px 25px whitesmoke;
+
+    }    
+}
+#qrUrl{
+    padding-right: 10%;
+    width: 18vw;
+    height: 3vh;
+    align-self: start;
+    border-radius: 5px 5px ;
+    border: none;
+}
+#qrUrl:hover{
+    box-shadow:0px 1px 40px whitesmoke;
+
+}
+.d1,.d3,.d4{
+    width: 25vw;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.d1{
+    height: 10vh;  
+}
+.d2{
+    padding-top: 6%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d3{
+    height: 10vh;
+}
+.d4{
+    height: 25vh;
+  
+}
+
+.cursor{
+    z-index: 999;
+    position: fixed;
+    background: #2696E8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px #fff,0 0 60px #fff,0 0 100px #fff;
+    animation: colors 3s  infinite;
+    display: none;
+
+}
+@keyframes colors {
+    0%{
+        filter: hue-rotate(0deg);
+        
+
+    }
+    100%{
+        filter: hue-rotate(360deg);
+     
+
+    }
+    
+}
+
+.cursor:before{
+    content: '';
+    position: absolute;
+    background: #2696E8;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transform: translate(-30%,-30%);
+    border-radius: 50%;
+
+}
+
+
+
